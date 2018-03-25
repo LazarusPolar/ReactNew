@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import LocacionClima from './LocacionClima/index'
+import ListaLocacion from './components/ListaLocacion'
 
 import './App.css';
 
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div className="App">
-          <LocacionClima> </LocacionClima>
+          <ListaLocacion> </ListaLocacion>
         </div>
       </MuiThemeProvider>
     );

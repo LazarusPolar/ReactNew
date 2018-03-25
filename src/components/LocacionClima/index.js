@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types'
 import DatosClima from './DatosClima/index'
 import Locacion from './Locacion'
 import CircularProgress from 'material-ui/CircularProgress'
-import TransformacionClima from '../services/transformacionClima'
+import TransformacionClima from '../../services/transformacionClima'
 
- const locacion = "Mexico,mx"
  const apiKey = "6b41a862b6575b8f8466d87b4388d99c"
- const apiClima = 'http://api.openweathermap.org/data/2.5/weather?q=' + locacion + '&appid=' + apiKey
 
 class locacionClima extends Component {
 
@@ -16,16 +15,17 @@ class locacionClima extends Component {
     }
 
     //Estado inicial del renderizado
-    constructor() {
+    constructor({ ciudad }) {
         super();
         this.state = {
-           ciudad: "Argentina", 
+           ciudad: ciudad, 
            datos: null
         }
     }
     
     //Actualiza el estado una vez con el click del boton 
     handlerActualizaClick = () => {
+        const apiClima = 'http://api.openweathermap.org/data/2.5/weather?q=' + this.state.ciudad + '&appid=' + apiKey
         fetch(apiClima).then( data => {
             return data.json()
         }).then( datosDeClima => {
@@ -64,6 +64,10 @@ class locacionClima extends Component {
                 </div>   
             )
     }
+}
+
+locacionClima.propTypes = {
+   ciudad: PropTypes.string
 }
 
 export default locacionClima;
