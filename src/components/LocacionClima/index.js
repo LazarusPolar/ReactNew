@@ -31,11 +31,31 @@ class locacionClima extends Component {
         }
     }
 
+    obtieneEstadoClima = clima => {
+        return SUN;
+    }
+
+    obtieneDatos = (datosDeClima) => {
+       const {humidity, temp} = datosDeClima.main;
+       const {speed} = datosDeClima.wind;
+       const weatherState = this.obtieneEstadoClima(this.clima)
+
+       const data = {
+           humedad: humidity, 
+           temperatura: temp,
+           estadoClima: weatherState,
+           viento: speed + "m/s"
+       }
+
+       return data;
+    }
     //Actualiza el estado una vez con el click del boton 
     handlerActualizaClick = () => {
         fetch(apiClima).then( data => {
             return data.json()
         }).then( datosDeClima => {
+            const datos =  this.obtieneDatos(datosDeClima);
+            this.setState({ datos })
             console.log(datosDeClima)
         })
         /*
