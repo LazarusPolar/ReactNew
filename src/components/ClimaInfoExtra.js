@@ -1,8 +1,12 @@
 import React from 'react'
 
-const climaInfoExtra = () => {
+const climaInfoExtra = ({humedad, viento}) => {
+    //Uso de Template strings para formato de cadenas 
     return (
-        <div>Info Extra</div>
+        <div>
+            <span>{`${humedad} % |  `}</span>
+            <span>{`${viento} de viento`}</span>
+        </div>
     )
 }
 
