@@ -5,7 +5,7 @@ import ClimaInfoExtra from './ClimaInfoExtra'
 const datosClima = () => {
     return (
         <div> 
-            <ClimaTemperatura> </ClimaTemperatura>
+            <ClimaTemperatura temperatura = {10} estadoClima = {'cloud'}> </ClimaTemperatura>
             <ClimaInfoExtra humedad = {80} viento = {'10 m/s'}> </ClimaInfoExtra>
         </div>
     )

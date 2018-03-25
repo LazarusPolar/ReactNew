@@ -1,5 +1,4 @@
 import React from 'react'
-import WeatherIcons from 'react-weathericons'
 
 const climaInfoExtra = ({humedad, viento}) => {
     //Uso de Template strings para formato de cadenas 
