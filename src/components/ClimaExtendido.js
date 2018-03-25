@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types'
 import climaInfoExtra from './LocacionClima/DatosClima/ClimaInfoExtra';
 import ClimaItem from './ClimaItem/index'
+import transformaForecasts from './../services/tranformaForecasts'
 /*
 const dias = [
     'Lunes', 
@@ -20,7 +21,6 @@ const datos = {
     viento: 10
 }
 */
-
 
 class ClimaExtendido extends Component {
 
@@ -47,7 +47,7 @@ class ClimaExtendido extends Component {
         return (
             <div>
                 Pronostico extendido para {ciudad}
-                {climaDatos ?
+                {!climaDatos ?
                     this.renderDiasSemana():
                     this.renderProgreso()}
             </div>
@@ -61,7 +61,8 @@ class ClimaExtendido extends Component {
             data => (data.json())
         ).then(
             datosClima => {
-                console.log(datosClima)
+                const datosForecast = transformaForecasts(datosClima)
+                this.setState({datosForecast})
             }
         )
     }
