@@ -4,19 +4,16 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Paper from 'material-ui/Paper'
 import ListaLocacion from './components/ListaLocacion'
 import ClimaExtendido from './components/ClimaExtendido'
-import {createStore} from 'redux'
 import {setCiudad} from './actions/index'
+import { store } from './store/index'
 import './App.css';
 
 const ciudades = ['Buenos Aires,AR', 'Mexico,MX', 'Madrid,ES'];
-const store = createStore(() => {}, window. __REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 class App extends Component {
-
   constructor() {
     super()
     this.state = {ciudad: null};
-
   }
 
   handleSeleccionLocacion = ciudad => {
