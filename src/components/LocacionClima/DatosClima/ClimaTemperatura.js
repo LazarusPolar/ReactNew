@@ -30,14 +30,15 @@ const obtieneIconoNombre = (estadoClima) => {
 }
 
 const obtieneIconoClima = (estadoClima) => {
-    return <WeatherIcons name = {obtieneIconoNombre(estadoClima)} size = "2x" />
+    return <WeatherIcons name = {obtieneIconoNombre(estadoClima)} size = "4x" />
 }
 
 const climaTemperatura = ({temperatura, estadoClima}) => {
     return (
         <div className = 'climaTemperaturaCont'>
             {obtieneIconoClima(estadoClima)}
-            <span>{`${temperatura} ºC`}</span>
+            <span className = 'temperatura'>{`${temperatura}`}</span>
+            <span className = 'temperaturaTipo'> ºC</span>
         </div>
     )
 }

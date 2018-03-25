@@ -6,8 +6,8 @@ const climaInfoExtra = ({humedad, viento}) => {
     //Uso de Template strings para formato de cadenas 
     return (
         <div className = 'climaExtraInfoCont'>
-            <span>{`${humedad} % |  `}</span>
-            <span>{`${viento} de viento`}</span>
+            <span className = 'climaExtraInfoTexto'>{`${humedad} % |  `}</span>
+            <span className = 'climaExtraInfoTexto'>{`${viento} de viento`}</span>
         </div>
     )
 }

@@ -1,11 +1,36 @@
 .datosClimaCont {
     background: blue;
+    width: 400px;
+    height: 150px;
+    line-height: 100px;
 }
 
 .climaExtraInfoCont {
-    background: aquamarine
+    background: aquamarine;
+    width: 40%;
+    display: inline-block;
 }
 
 .climaTemperaturaCont {
-    background: blueviolet
+    background: blueviolet;
+    width: 60%;
+    display: inline-block;    
+}
+
+.temperatura {
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 20px;
+    color: #333;
+}
+
+.temperaturaTipo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #666;
+}
+
+.climaExtraInfoTexto {
+    display: block;
+    font-size: 16px;
 }
