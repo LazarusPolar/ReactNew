@@ -12,7 +12,7 @@ class App extends Component {
 
   constructor() {
     super()
-    this.state = {ciudad: "Nueva Ciudad"};
+    this.state = {ciudad: null};
 
   }
 
@@ -28,7 +28,13 @@ class App extends Component {
       <MuiThemeProvider>
         <div className="App">
           <ListaLocacion ciudades = {ciudades} enLocacionSeleccionada = {this.handleSeleccionLocacion}> </ListaLocacion>
-          <Paper><div><ClimaExtendido ciudad = {ciudad}/></div></Paper>
+          <Paper>
+              <div>
+                {ciudad ? 
+                  <ClimaExtendido ciudad = {ciudad}/>: 
+                  <h1> Ciudad no seleccionada </h1>}
+              </div>
+            </Paper>
         </div>
       </MuiThemeProvider>
     );
