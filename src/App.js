@@ -4,10 +4,11 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Paper from 'material-ui/Paper'
 import ListaLocacion from './components/ListaLocacion'
 import ClimaExtendido from './components/ClimaExtendido'
-
+import {createStore} from 'redux'
 import './App.css';
 
 const ciudades = ['Buenos Aires,AR', 'Mexico,MX', 'Madrid,ES'];
+const store = createStore(() => {})
 class App extends Component {
 
   constructor() {
@@ -19,6 +20,8 @@ class App extends Component {
   handleSeleccionLocacion = ciudad => {
     this.setState({ciudad: ciudad})
     console.log("Handle Seleccion Locacion Appjs" + ciudad)
+    const accion = {type: 'setCiudad', value: ciudad}
+    store.dispatch(accion);
   }
 
   render() {
