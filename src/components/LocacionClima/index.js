@@ -33,7 +33,11 @@ class locacionClima extends Component {
 
     //Actualiza el estado una vez con el click del boton 
     handlerActualizaClick = () => {
-        fetch(apiClima);
+        fetch(apiClima).then( data => {
+            return data.json()
+        }).then( datosDeClima => {
+            console.log(datosDeClima)
+        })
         /*
         this.setState ({
             ciudad: 'Ciudad de Mexico',
