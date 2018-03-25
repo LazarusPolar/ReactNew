@@ -9,16 +9,25 @@ import './App.css';
 
 const ciudades = ['Buenos Aires,AR', 'Mexico,MX', 'Madrid,ES'];
 class App extends Component {
+
+  constructor() {
+    super()
+    this.state = {ciudad: "Nueva Ciudad"};
+
+  }
+
   handleSeleccionLocacion = ciudad => {
     console.log("Handle Seleccion Locacion Appjs" + ciudad)
   }
 
   render() {
+    const {ciudad} = this.state
+
     return (
       <MuiThemeProvider>
         <div className="App">
           <ListaLocacion ciudades = {ciudades} enLocacionSeleccionada = {this.handleSeleccionLocacion}> </ListaLocacion>
-          <Paper><div><ClimaExtendido ciudad = {"Mexico,MX"}/></div></Paper>
+          <Paper><div><ClimaExtendido ciudad = {ciudad}/></div></Paper>
         </div>
       </MuiThemeProvider>
     );
