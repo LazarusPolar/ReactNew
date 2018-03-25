@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import DatosClima from './DatosClima/index'
 import Locacion from './Locacion'
 import {
@@ -17,13 +17,13 @@ const datos = {
     viento: '10 m/s'
 }
 
-const locacionClima = () => {
-    return (
-        <div>
-            <Locacion ciudad = {'Ciudad de Mexico'}> </Locacion>
-            <DatosClima datos = {datos} /> 
-        </div>   
-    )
+class locacionClima extends Component {
+    render = () => { 
+            <div>
+                <Locacion ciudad = {'Ciudad de Mexico'}> </Locacion>
+                <DatosClima datos = {datos} /> 
+            </div>   
+    }
 }
 
 export default locacionClima;
