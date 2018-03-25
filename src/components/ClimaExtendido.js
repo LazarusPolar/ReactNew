@@ -12,9 +12,17 @@ const dias = [
     'Sabado',
     'Domingo'
 ]
+
+const datos = {
+    temperatura: 10, 
+    humedad: 10,
+    estadoClima: 'CLOUD',
+    viento: 10
+}
+
 class ClimaExtendido extends Component {
     renderDiasSemana = () => {
-        return dias.map(dia => <ClimaItem diaSemana = {dia}></ClimaItem>)
+        return dias.map(dia => <ClimaItem diaSemana = {dia} hora = {"12"} datos = {datos}></ClimaItem>)
     }
 
     render() {
