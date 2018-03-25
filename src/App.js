@@ -17,6 +17,7 @@ class App extends Component {
   }
 
   handleSeleccionLocacion = ciudad => {
+    this.setState({ciudad: ciudad})
     console.log("Handle Seleccion Locacion Appjs" + ciudad)
   }
 
