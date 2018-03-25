@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import Paper from 'material-ui/Paper'
 import ListaLocacion from './components/ListaLocacion'
+import ClimaExtendido from './components/ClimaExtendido'
 
 import './App.css';
 
@@ -16,6 +18,7 @@ class App extends Component {
       <MuiThemeProvider>
         <div className="App">
           <ListaLocacion ciudades = {ciudades} enLocacionSeleccionada = {this.handleSeleccionLocacion}> </ListaLocacion>
+          <Paper><div><ClimaExtendido ciudad = {"Mexico,MX"}/></div></Paper>
         </div>
       </MuiThemeProvider>
     );
