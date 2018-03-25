@@ -9,6 +9,9 @@ import {
     SNOW, 
     WINDY
  } from './../../constants/climas'
+ const locacion = "Mexico,mx"
+ const apiKey = "6b41a862b6575b8f8466d87b4388d99c"
+ const apiClima = 'http://api.openweathermap.org/data/2.5/weather?q=' + locacion + '&appid=' + apiKey
 
 const datos = {
     temperatura: 20, 
@@ -17,14 +20,9 @@ const datos = {
     viento: '10 m/s'
 }
 
-const datos2 = {
-    temperatura: 231, 
-    estadoClima: SUN,
-    humedad: 5, 
-    viento: '10 m/s'
-}
-
 class locacionClima extends Component {
+
+    //Estado inicial del renderizado
     constructor() {
         super();
         this.state = {
@@ -33,11 +31,14 @@ class locacionClima extends Component {
         }
     }
 
+    //Actualiza el estado una vez con el click del boton 
     handlerActualizaClick = () => {
+        fetch(apiClima);
+        /*
         this.setState ({
             ciudad: 'Ciudad de Mexico',
             datos: datos2
-        }) 
+        }) */
     }
 
     render = () => {
