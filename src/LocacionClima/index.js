@@ -9,7 +9,7 @@ import {
     RAIN, 
     SNOW, 
     WINDY
- } from './../../constants/climas'
+ } from './../constants/climas'
 
  const locacion = "Mexico,mx"
  const apiKey = "6b41a862b6575b8f8466d87b4388d99c"
@@ -23,6 +23,11 @@ const datos = {
 }
 
 class locacionClima extends Component {
+
+    componentWillMount() {
+        console.log("Hola")
+        this.handlerActualizaClick();
+    }
 
     //Estado inicial del renderizado
     constructor() {
@@ -38,7 +43,7 @@ class locacionClima extends Component {
         fetch(apiClima).then( data => {
             return data.json()
         }).then( datosDeClima => {
-            const datos =  this.TransformacionClima(datosDeClima);
+            const datos =  TransformacionClima(datosDeClima);
             this.setState({ datos })
             console.log(datosDeClima)
         })
@@ -49,10 +54,7 @@ class locacionClima extends Component {
         }) */
     }
 
-    componentWillUnmount() {
-        console.log('componentUnmount')
-    }
-
+/*
     componentDidMount() {
         console.log('componentwillmount')
     }
@@ -63,7 +65,7 @@ class locacionClima extends Component {
 
     componentDidUpdate() {
         console.log('componentdidupdate')
-    }
+    }*/
     
     render = () => {
         console.log('render')

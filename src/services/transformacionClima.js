@@ -12,14 +12,14 @@ const obtieneTemperatura = kelvin => {
     return convert(kelvin).from('K').to('C').toFixed(2);
 }
 
-const obtieneEstadoClima = clima => {
+const obtieneEstadoClima = () => {
     return SUN;
 }
 
 const transformacionClima = (datosDeClima) => {
     const {humidity, temp} = datosDeClima.main;
     const {speed} = datosDeClima.wind;
-    const weatherState = obtieneEstadoClima(clima)
+    const weatherState = obtieneEstadoClima()
     const temperatura = obtieneTemperatura(temp); 
 
     const data = {
