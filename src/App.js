@@ -8,7 +8,12 @@ import {createStore} from 'redux'
 import './App.css';
 
 const ciudades = ['Buenos Aires,AR', 'Mexico,MX', 'Madrid,ES'];
-const store = createStore(() => {})
+const store = createStore(() => {}, window. __REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+
+const setCiudad = value => ({
+  type: 'setCiudad',
+  value
+})
 class App extends Component {
 
   constructor() {
@@ -20,8 +25,10 @@ class App extends Component {
   handleSeleccionLocacion = ciudad => {
     this.setState({ciudad: ciudad})
     console.log("Handle Seleccion Locacion Appjs" + ciudad)
-    const accion = {type: 'setCiudad', value: ciudad}
-    store.dispatch(accion);
+    
+    //const accion = {type: 'setCiudad', value: ciudad}
+    
+    store.dispatch(setCiudad(ciudad));
   }
 
   render() {
