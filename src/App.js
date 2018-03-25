@@ -8,7 +8,7 @@ import './App.css';
 const ciudades = ['Buenos Aires,AR', 'Mexico,MX', 'Madrid,ES'];
 class App extends Component {
   handleSeleccionLocacion = ciudad => {
-    console.log("Handle Seleccion Locacion Appjs")
+    console.log("Handle Seleccion Locacion Appjs" + ciudad)
   }
 
   render() {
