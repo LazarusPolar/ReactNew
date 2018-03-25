@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import LocacionClima from './components/LocacionClima'
+import LocacionClima from './components/LocacionClima/index'
 
 import './App.css';
 

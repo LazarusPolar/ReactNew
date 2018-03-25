@@ -1,5 +1,5 @@
 import React from 'react';
-import DatosClima from './DatosClima'
+import DatosClima from './DatosClima/index'
 import Locacion from './Locacion'
 
 const locacionClima = () => {

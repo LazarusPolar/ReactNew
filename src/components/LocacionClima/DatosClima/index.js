@@ -8,7 +8,7 @@ import {
     RAIN, 
     SNOW, 
     WINDY
- } from './../constants/climas'
+ } from './../../../constants/climas'
 
 const datosClima = () => {
     return (
