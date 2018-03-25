@@ -55,8 +55,19 @@ class ClimaExtendido extends Component {
     }
 
     componentDidMount () {
+        this.actualizaCiudad(this.props.ciudad)
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.ciudad !== this.props.ciudad){
+            this.setState( {climaDatos: null })
+            this.actualizaCiudad(nextProps.ciudad)
+        }
+    }
+
+    actualizaCiudad = ciudad => {
         const apiKey = "6b41a862b6575b8f8466d87b4388d99c"
-        const apiClima = 'http://api.openweathermap.org/data/2.5/forecast?q=' + this.props.ciudad + '&appid=' + apiKey
+        const apiClima = 'http://api.openweathermap.org/data/2.5/forecast?q=' + ciudad + '&appid=' + apiKey
         fetch(apiClima).then(
             data => (data.json())
         ).then(
