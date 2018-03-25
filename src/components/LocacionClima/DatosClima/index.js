@@ -9,10 +9,11 @@ import {
     SNOW, 
     WINDY
  } from './../../../constants/climas'
+ import './styles.css'
 
 const datosClima = () => {
     return (
-        <div> 
+        <div className = 'datosClimaCont'> 
             <ClimaTemperatura temperatura = {10} estadoClima = {CLOUD}> </ClimaTemperatura>
             <ClimaInfoExtra humedad = {80} viento = {'10 m/s'}> </ClimaInfoExtra>
         </div>

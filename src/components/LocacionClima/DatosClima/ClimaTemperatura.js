@@ -9,6 +9,7 @@ import {
    SNOW, 
    WINDY
 } from './../../../constants/climas'
+import './styles.css'
 
 const obtieneIconoNombre = (estadoClima) => {
 
@@ -34,7 +35,7 @@ const obtieneIconoClima = (estadoClima) => {
 
 const climaTemperatura = ({temperatura, estadoClima}) => {
     return (
-        <div>
+        <div className = 'climaTemperaturaCont'>
             {obtieneIconoClima(estadoClima)}
             <span>{`${temperatura} ºC`}</span>
         </div>

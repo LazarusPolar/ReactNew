@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './styles.css'
 
 const climaInfoExtra = ({humedad, viento}) => {
     //Uso de Template strings para formato de cadenas 
     return (
-        <div>
+        <div className = 'climaExtraInfoCont'>
             <span>{`${humedad} % |  `}</span>
             <span>{`${viento} de viento`}</span>
         </div>
