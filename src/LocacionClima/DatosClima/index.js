@@ -10,7 +10,7 @@ import {
     SNOW, 
     WINDY
  } from './../../constants/climas'
- import './styles.css'
+import './styles.css'
 
 const datosClima = ({ datos }) => {
     const {temperatura, estadoClima, humedad, viento} = datos;
