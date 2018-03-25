@@ -49,7 +49,24 @@ class locacionClima extends Component {
         }) */
     }
 
+    componentWillUnmount() {
+        console.log('componentUnmount')
+    }
+
+    componentDidMount() {
+        console.log('componentwillmount')
+    }
+
+    componentWillUpdate() {
+        console.log('componentwillupdate')
+    }
+
+    componentDidUpdate() {
+        console.log('componentdidupdate')
+    }
+    
     render = () => {
+        console.log('render')
         const {ciudad, datos} = this.state;
             return( 
                 <div>
