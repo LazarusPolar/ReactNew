@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import DatosClima from './DatosClima/index'
 import Locacion from './Locacion'
+import CircularProgress from 'material-ui/CircularProgress'
 import TransformacionClima from '../services/transformacionClima'
 
  const locacion = "Mexico,mx"
@@ -58,7 +59,7 @@ class locacionClima extends Component {
             return( 
                 <div>
                     <Locacion ciudad = {ciudad}> </Locacion>
-                    {datos ? <DatosClima datos = {datos} /> : 'Cargando'}
+                    {datos ? <DatosClima datos = {datos} /> : <CircularProgress />}
                     <button onClick = {this.handlerActualizaClick}>Actualizar></button>
                 </div>   
             )

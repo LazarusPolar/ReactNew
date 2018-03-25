@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import LocacionClima from './LocacionClima/index'
 
 import './App.css';
@@ -7,9 +8,11 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <LocacionClima> </LocacionClima>
-      </div>
+      <MuiThemeProvider>
+        <div className="App">
+          <LocacionClima> </LocacionClima>
+        </div>
+      </MuiThemeProvider>
     );
   }
 }
