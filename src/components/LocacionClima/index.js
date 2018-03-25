@@ -7,15 +7,15 @@ import TransformacionClima from '../../services/transformacionClima'
 
  const apiKey = "6b41a862b6575b8f8466d87b4388d99c"
 
-class locacionClima extends Component {
+class LocacionClima extends Component {
 
     componentWillMount() {
-        console.log("Hola")
         this.handlerActualizaClick();
     }
 
     //Estado inicial del renderizado
     constructor({ ciudad }) {
+        console.log("Constructor")
         super();
         this.state = {
            ciudad: ciudad, 
@@ -31,7 +31,7 @@ class locacionClima extends Component {
         }).then( datosDeClima => {
             const datos =  TransformacionClima(datosDeClima);
             this.setState({ datos })
-            console.log(datosDeClima)
+            //console.log(datosDeClima)
         })
         /*
         this.setState ({
@@ -66,8 +66,8 @@ class locacionClima extends Component {
     }
 }
 
-locacionClima.propTypes = {
+LocacionClima.propTypes = {
    ciudad: PropTypes.string
 }
 
-export default locacionClima;
+export default LocacionClima;

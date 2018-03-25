@@ -5,12 +5,13 @@ import ListaLocacion from './components/ListaLocacion'
 
 import './App.css';
 
+const ciudades = ['Buenos Aires,AR', 'Mexico,MX', 'Madrid,ES'];
 class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
         <div className="App">
-          <ListaLocacion> </ListaLocacion>
+          <ListaLocacion ciudades = {ciudades}> </ListaLocacion>
         </div>
       </MuiThemeProvider>
     );

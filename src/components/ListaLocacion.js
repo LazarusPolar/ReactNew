@@ -1,14 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LocacionClima from './LocacionClima/index'
 
-const ListaLocacion = () => (
-    <div>
-        <LocacionClima ciudad = "Mexico,MX" />
-        <LocacionClima ciudad = "Mexico,MX" />
-        <LocacionClima ciudad = "Mexico,MX" />
-        <LocacionClima ciudad = "Mexico,MX" />
-        <LocacionClima ciudad = "Mexico,MX" />
-    </div>
+const strToComponent = (ciudades) => (
+     ciudades.map( ciudad => (<LocacionClima ciudad = {ciudad} />))
 )
+
+const ListaLocacion = ({ ciudades }) => (
+        <div>
+            {strToComponent(ciudades)}
+        </div>
+)
+
+ListaLocacion.propTypes = {
+    ciudades: PropTypes.array.isRequired
+}
 
 export default ListaLocacion;
