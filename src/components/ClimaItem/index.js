@@ -1,7 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const ClimaItem = () => (
-    <div>Item</div>
+const ClimaItem = ({ diaSemana }) => (
+    <div>{ diaSemana }</div>
 )
+
+ClimaItem.propTypes = {
+    diaSemana: PropTypes.string.isRequired
+}
 
 export default ClimaItem;
