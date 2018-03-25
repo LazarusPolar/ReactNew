@@ -21,8 +21,6 @@ const datos = {
 }
 */
 
-const apiKey = "6b41a862b6575b8f8466d87b4388d99c"
-const apiClima = 'http://api.openweathermap.org/data/2.5/forecast?q=' + this.state.ciudad + '&appid=' + apiKey
 
 class ClimaExtendido extends Component {
 
@@ -57,7 +55,15 @@ class ClimaExtendido extends Component {
     }
 
     componentDidMount () {
-
+        const apiKey = "6b41a862b6575b8f8466d87b4388d99c"
+        const apiClima = 'http://api.openweathermap.org/data/2.5/forecast?q=' + this.props.ciudad + '&appid=' + apiKey
+        fetch(apiClima).then(
+            data => (data.json())
+        ).then(
+            datosClima => {
+                console.log(datosClima)
+            }
+        )
     }
 }
 
