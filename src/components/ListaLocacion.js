@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import LocacionClima from './LocacionClima/index'
 
 const strToComponent = (ciudades) => (
-     ciudades.map( ciudad => (<LocacionClima ciudad = {ciudad} />))
+     ciudades.map( ciudad => (<LocacionClima key = {ciudad} ciudad = {ciudad} />))
 )
 
 const ListaLocacion = ({ ciudades }) => (
