@@ -1,5 +1,6 @@
 import React from 'react'
 import WeatherIcons from 'react-weathericons'
+import PropTypes from 'prop-types'
 import {
    CLOUD,
    CLOUDY,
@@ -39,5 +40,12 @@ const climaTemperatura = ({temperatura, estadoClima}) => {
         </div>
     )
 }
+
+// Manda errores para variaciones en las variables. 
+// Ayuda a que las variables enviadas en los props sean de un tipo especifico
+climaTemperatura.propTypes = {
+    temperatura: PropTypes.number.isRequired,
+    estadoClima: PropTypes.string
+};
 
 export default climaTemperatura
