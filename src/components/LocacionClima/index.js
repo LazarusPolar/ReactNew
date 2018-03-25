@@ -55,9 +55,10 @@ class LocacionClima extends Component {
     
     render = () => {
         console.log('render')
+        const {locacionClimaClick} = this.props
         const {ciudad, datos} = this.state;
             return( 
-                <div>
+                <div onClick = {locacionClimaClick}>
                     <Locacion ciudad = {ciudad}> </Locacion>
                     {datos ? <DatosClima datos = {datos} /> : <CircularProgress />}
                     <button onClick = {this.handlerActualizaClick}>Actualizar></button>
@@ -66,8 +67,10 @@ class LocacionClima extends Component {
     }
 }
 
-LocacionClima.propTypes = {
-   ciudad: PropTypes.string
+LocacionClima.propTypes = 
+{
+   ciudad: PropTypes.string,
+   locacionClimaClick: PropTypes.func
 }
 
 export default LocacionClima;
