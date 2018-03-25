@@ -20,6 +20,10 @@ const datos = {
     viento: 10
 }
 */
+
+const apiKey = "6b41a862b6575b8f8466d87b4388d99c"
+const apiClima = 'http://api.openweathermap.org/data/2.5/forecast?q=' + this.state.ciudad + '&appid=' + apiKey
+
 class ClimaExtendido extends Component {
 
     constructor () {

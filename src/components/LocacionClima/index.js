@@ -5,8 +5,6 @@ import Locacion from './Locacion'
 import CircularProgress from 'material-ui/CircularProgress'
 import TransformacionClima from '../../services/transformacionClima'
 
- const apiKey = "6b41a862b6575b8f8466d87b4388d99c"
-
 class LocacionClima extends Component {
 
     componentWillMount() {
@@ -25,6 +23,7 @@ class LocacionClima extends Component {
     
     //Actualiza el estado una vez con el click del boton 
     handlerActualizaClick = () => {
+        const apiKey = "6b41a862b6575b8f8466d87b4388d99c"
         const apiClima = 'http://api.openweathermap.org/data/2.5/weather?q=' + this.state.ciudad + '&appid=' + apiKey
         fetch(apiClima).then( data => {
             return data.json()
