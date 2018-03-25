@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types'
 import climaInfoExtra from './LocacionClima/DatosClima/ClimaInfoExtra';
 import ClimaItem from './ClimaItem/index'
-
+/*
 const dias = [
     'Lunes', 
     'Martes', 
@@ -19,21 +19,41 @@ const datos = {
     estadoClima: 'CLOUD',
     viento: 10
 }
-
+*/
 class ClimaExtendido extends Component {
+
+    constructor () {
+        super ();
+        this.state = {
+            climaDatos: null
+        }
+    }
+
     renderDiasSemana = () => {
-        return dias.map(dia => <ClimaItem diaSemana = {dia} hora = {"12"} datos = {datos}></ClimaItem>)
+        return "Render Items"
+        //return dias.map(dia => <ClimaItem diaSemana = {dia} hora = {"12"} datos = {datos}></ClimaItem>)
+    }
+
+    renderProgreso = () => {
+       return "Cargando"
     }
 
     render() {
         const {ciudad} = this.props;
+        const {climaDatos} = this.state;
 
         return (
             <div>
                 Pronostico extendido para {ciudad}
-                {this.renderDiasSemana()}
+                {climaDatos ?
+                    this.renderDiasSemana():
+                    this.renderProgreso()}
             </div>
         )
+    }
+
+    componentDidMount () {
+
     }
 }
 
