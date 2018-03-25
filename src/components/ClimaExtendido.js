@@ -62,6 +62,7 @@ class ClimaExtendido extends Component {
         ).then(
             datosClima => {
                 const datosForecast = transformaForecasts(datosClima)
+                console.log(datosForecast)
                 this.setState({datosForecast})
             }
         )
