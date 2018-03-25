@@ -31,9 +31,9 @@ class ClimaExtendido extends Component {
         }
     }
 
-    renderDiasSemana = () => {
-        return "Render Items"
-        //return dias.map(dia => <ClimaItem diaSemana = {dia} hora = {"12"} datos = {datos}></ClimaItem>)
+    renderDiasSemana = (climaDatos) => {
+        //return "Render Items"
+        return climaDatos.map(climaDato => <ClimaItem diaSemana = {climaDato.diaSemana} hora = {climaDato.hora} datos = {climaDato.datos}></ClimaItem>)
     }
 
     renderProgreso = () => {
@@ -47,8 +47,8 @@ class ClimaExtendido extends Component {
         return (
             <div>
                 Pronostico extendido para {ciudad}
-                {!climaDatos ?
-                    this.renderDiasSemana():
+                {climaDatos ?
+                    this.renderDiasSemana(climaDatos):
                     this.renderProgreso()}
             </div>
         )
@@ -61,9 +61,9 @@ class ClimaExtendido extends Component {
             data => (data.json())
         ).then(
             datosClima => {
-                const datosForecast = transformaForecasts(datosClima)
-                console.log(datosForecast)
-                this.setState({datosForecast})
+                const climaDatos = transformaForecasts(datosClima)
+                console.log(climaDatos)
+                this.setState({climaDatos})
             }
         )
     }
