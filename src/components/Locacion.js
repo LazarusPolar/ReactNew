@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const locacion = (props) => {   // En lugar de props podria ir ({ciudad})
     const { ciudad } = props; //Deconstruccion
@@ -17,6 +18,10 @@ const locacion = (props) => {   // En lugar de props podria ir ({ciudad})
         </div>
     )
     */
+}
+
+locacion.propTypes = {
+    ciudad: PropTypes.string
 }
 
 export default locacion;
