@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Paper from 'material-ui/Paper'
 import ListaLocacion from './components/ListaLocacion'
@@ -22,6 +23,7 @@ class App extends Component {
     
     //const accion = {type: 'setCiudad', value: ciudad}
     
+    // Inyecta elemento en el props en lugar de recuperarlo directamente del store
     this.props.setCiudad(ciudad);
   }
 
@@ -45,9 +47,14 @@ class App extends Component {
   }
 }
 
+App.propTypes = {
+  setCiudad: PropTypes.func.isRequired
+}
+
 const mapDispatchToPropsActions = dispatch => ({
   setCiudad: value => dispatch(setCiudad(value))
 })
-const appConectado = connect(null, mapDispatchToPropsActions)(App);
 
-export default appConectado;
+//const appConectado = connect(null, mapDispatchToPropsActions)(App);
+
+export default connect(null, mapDispatchToPropsActions)(App);
