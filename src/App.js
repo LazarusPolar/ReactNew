@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import { connect } from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Paper from 'material-ui/Paper'
 import ListaLocacion from './components/ListaLocacion'
 import ClimaExtendido from './components/ClimaExtendido'
 import {setCiudad} from './actions/index'
-import { store } from './store/index'
 import './App.css';
 
 const ciudades = ['Buenos Aires,AR', 'Mexico,MX', 'Madrid,ES'];
@@ -22,7 +22,7 @@ class App extends Component {
     
     //const accion = {type: 'setCiudad', value: ciudad}
     
-    store.dispatch(setCiudad(ciudad));
+    this.props.setCiudad(ciudad);
   }
 
   render() {
@@ -45,4 +45,9 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToPropsActions = dispatch => ({
+  setCiudad: value => dispatch(setCiudad(value))
+})
+const appConectado = connect(null, mapDispatchToPropsActions)(App);
+
+export default appConectado;
