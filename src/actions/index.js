@@ -1,6 +1,6 @@
 export const SET_CIUDAD = 'SET_CIUDAD'
 
-export const setCiudad = value => ({
+export const setCiudad = payload => ({
     type: SET_CIUDAD,
-    value
+    payload
   })
